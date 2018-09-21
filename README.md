@@ -4,4 +4,4 @@
 
 | №  | Описание  | Ссылка |
 | :---- |:-----------:| --------:|
-| 1      | "Виселица" | $1600 |
+| 1      | "Виселица" | https://github.com/DukeNukem4ever/Homework-2nd-course-/blob/master/homeworks/1/Homework1.py |
