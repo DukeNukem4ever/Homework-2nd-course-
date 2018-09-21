@@ -5,3 +5,5 @@
 | №  | Описание  |          Ссылка        |
 | :---- |:--------:| -------:|
 | 1      | "Виселица" | https://github.com/DukeNukem4ever/Homework-2nd-course-/blob/master/homeworks/1/Homework1.py |
+
+<img src=\"./deadline-4.jpg\" style=\"width: 500px;\" align=\"left\" >
