@@ -5,5 +5,6 @@
 | №  | Описание  |          Ссылка        |
 | :---- |:--------:| -------:|
 | 1      | "Виселица" | https://github.com/DukeNukem4ever/Homework-2nd-course-/blob/master/homeworks/1/Homework1.py |
+|2      | "GitHub Users" | https://github.com/DukeNukem4ever/Homework-2nd-course-/blob/master/homeworks/2/homework2.ipynb |
 
 Картинка: http://coremission.net/wp-content/uploads/2018/02/deadline-4.jpg
