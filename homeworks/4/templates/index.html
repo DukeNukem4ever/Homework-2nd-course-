@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<style>
+div {
+    background-color: #00bfff;
+    color: #ffffff;
+}
+</style>
+	<div class="jumbotron text-center">
+		<h1>Опрос про неологизмы в английском языке</h1> 
+	</div>
+	<meta charset = "utf-8">
+	<title>Опрос про неологизмы в английском языке.</title>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h3>СОВЕТ</h3>
+			<p>Постарайтесь, пожалуйста, заполнить анкету на английском языке</p>
+			<p>для удобства последующих операций с ней.</p>
+		</div>
+	</div>
+</div>
+<form action = "http://127.0.0.1:5000/thanks" method = 'POST'>
+	<fieldset>
+	Вы знаете, что такое неологизмы?<br>
+	<input type='radio' name = "ask" value="yes" checked>Да<br>
+	<input type='radio' name = "ask" value="no" checked>Нет<br>
+	<p>Приведите пример любого английского неологизма.</p>
+	<input type='text' name = 'what' required pattern = '[a-zA-Z]+'><br>
+	<p>Укажите способ образования этого неологизма (если нет - нужно ввести свой - на английском языке)</p>
+	<input list="ways", name="how">
+	<datalist id="ways">
+		<option value="Blending">
+		<option value="Shortening">
+		<option value="Borrowing">
+		<option value="Compounding">
+		<option value="Abbreviation">
+		<option value="Derivation">
+	</datalist>
+	<p>Ваше имя?<p>
+	<input type='text' name = 'name' required pattern = '[a-zA-Z]+'><br>
+	<p>Ваша фамилия?</p>
+	<input type='text' name = 'surname' required pattern = '[a-zA-Z]+'><br>
+	<p><input type='submit' value='Отправить'></p>
+	
+	</fieldset>
+</form>
+<p><a href='/stats'>Статистика опроса</a></p>
+<p><a href='/json'>json со всеми введёнными на сайте данными
+</a></p>
+<p><a href='/search'>Поиск по результатам</a></p>
+</body>
+</html>

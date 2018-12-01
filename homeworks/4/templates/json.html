@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+div {
+    background-color: #00bfff;
+    color: #ffffff;
+}
+</style>
+	<meta charset="UTF-8">
+	<title>JSON ответов</title>
+</head>
+<body>
+<pre>
+<table>
+{% for key, value in json.items() %}
+   <tr>
+        <th> {{ key }} </th>
+        <td> {{ value }} </td>
+   </tr>
+{% endfor %}
+</table>
+</pre>
+<p><a href='/'>Главная страница</a></p>
+<p><a href='/stats'>Статистика опроса</a></p>
+<p><a href='/search'>Поиск по результатам</a></p>
+</body>
+</html>
