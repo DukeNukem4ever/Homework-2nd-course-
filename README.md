@@ -11,5 +11,6 @@
 |5      | "Поисковая система для корпуса" | https://github.com/DukeNukem4ever/Homework-2nd-course-/blob/master/homeworks/5/hw55.py |
 |6      | "VK API" |  https://github.com/DukeNukem4ever/Homework-2nd-course-/blob/master/homeworks/6/hw6.ipynb |
 |7      | NetworkX |  https://github.com/DukeNukem4ever/Homework-2nd-course-/blob/master/homeworks/7/homework7.ipynb |
+|8      | Проект   |  https://www.pythonanywhere.com/user/DukeNukem4ever/files/home/DukeNukem4ever/mysite |
 
 Картинка: http://coremission.net/wp-content/uploads/2018/02/deadline-4.jpg
