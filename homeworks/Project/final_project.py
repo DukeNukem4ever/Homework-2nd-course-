@@ -10,10 +10,8 @@ WEBHOOK_URL_PATH = "/{}/".format(conf.TOKEN)
 
 bot = telebot.TeleBot(conf.TOKEN, threaded=False)  # бесплатный аккаунт pythonanywhere запрещает работу с несколькими тредами
 
-# удаляем предыдущие вебхуки, если они были
 bot.remove_webhook()
 
-# ставим новый вебхук = Слышь, если кто мне напишет, стукни сюда — url
 bot.set_webhook(url=WEBHOOK_URL_BASE+WEBHOOK_URL_PATH)
 
 app = flask.Flask(__name__)
@@ -31,12 +29,20 @@ with open('/home/DukeNukem4ever/mysite/1.txt','r',encoding = 'utf-8-sig') as tex
 
 random.shuffle(lis)
 
-# этот обработчик запускает функцию send_welcome, когда пользователь отправляет команды /start или /help
+
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     bot.send_message(message.chat.id, "Здравствуйте! Это бот, который отвечает на ваши реплики строчками из стихотворений Даниила Хармса.")
     bot.send_message(message.chat.id, "Пишите, пожалуйста, без знаков препинания.")
     bot.send_message(message.chat.id, "Если Вы не получили от меня ответа, то попробуйте другое слово. Есть такие слова, к которым я не могу подобрать рифмы Хармса.")
+
+
+@bot.message_handler(commands=['about'])
+def send_welcome2(message):
+    bot.send_message(message.chat.id, "Даниил Иванович Хармс (настоящая фамилия Ювачёв) - советский писатель, поэт и драматург.")
+    bot.send_message(message.chat.id, "Он известен благодаря своим детским стихотворениям, многие из которых были первоначально написаны при сотрудничестве с журналами 'Ёж', 'Чиж', 'Октябрята' и 'Сверчок', причём как самостоятельно, так и в тандемах с некоторыми писателями (такими, как Самуил Яковлевич Маршак).")
+    bot.send_message(message.chat.id, "Хармс очень ответственно подходил к работе в детской литературе, которая в 30-х годах XX века была для него главным источником дохода.")
+    bot.send_message(message.chat.id, "Это отличало его от таких любительских (по мнению общества) писателей, как Александр Введенский.")
 
 
 @bot.message_handler(func=lambda m: True)  # этот обработчик реагирует все прочие сообщения
@@ -47,7 +53,7 @@ def send_len(message):
         line = re.sub('[,.?:;!@"\']','',line)
         line = re.sub('-',' ',line)
         line = re.sub('   ', '', line)
-        if message.text[-2:] == line[-2:]:
+        if message.text[-3:] == line[-3:]:
             need.append(line)
             break
         else:
@@ -59,12 +65,11 @@ def send_len(message):
     random.shuffle(lis)
 
 
-# пустая главная страничка для проверки
 @app.route('/', methods=['GET', 'HEAD'])
 def index():
     return 'ok'
 
-# обрабатываем вызовы вебхука = функция, которая запускается, когда к нам постучался телеграм
+
 @app.route(WEBHOOK_URL_PATH, methods=['POST'])
 def webhook():
     if flask.request.headers.get('content-type') == 'application/json':
