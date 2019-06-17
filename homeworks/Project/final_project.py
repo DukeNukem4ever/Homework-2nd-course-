@@ -53,7 +53,7 @@ def send_len(message):
         line = re.sub('[,.?:;!@"\']','',line)
         line = re.sub('-',' ',line)
         line = re.sub('   ', '', line)
-        if message.text[-3:] == line[-3:]:
+        if message.text[-2:] == line[-2:]:
             need.append(line)
             break
         else:
