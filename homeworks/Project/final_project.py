@@ -33,8 +33,9 @@ random.shuffle(lis)
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
     bot.send_message(message.chat.id, "Здравствуйте! Это бот, который отвечает на ваши реплики строчками из стихотворений Даниила Хармса.")
-    bot.send_message(message.chat.id, "Пишите, пожалуйста, без знаков препинания.")
+    bot.send_message(message.chat.id, "Пишите, пожалуйста, без знаков препинания. Я также могу проанализировать только слова, написанные на русском языке - без каких-либо цифр.")
     bot.send_message(message.chat.id, "Если Вы не получили от меня ответа, то попробуйте другое слово. Есть такие слова, к которым я не могу подобрать рифмы Хармса.")
+    bot.send_message(message.chat.id, "Для полученя краткой информации о Данииле Хармсе введите /about.")
 
 
 @bot.message_handler(commands=['about'])
