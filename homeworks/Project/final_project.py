@@ -8,7 +8,7 @@ import re
 WEBHOOK_URL_BASE = "https://{}:{}".format(conf.WEBHOOK_HOST, conf.WEBHOOK_PORT)
 WEBHOOK_URL_PATH = "/{}/".format(conf.TOKEN)
 
-bot = telebot.TeleBot(conf.TOKEN, threaded=False)  # бесплатный аккаунт pythonanywhere запрещает работу с несколькими тредами
+bot = telebot.TeleBot(conf.TOKEN, threaded=False)
 
 bot.remove_webhook()
 
@@ -53,7 +53,7 @@ def send_len(message):
         line = re.sub('[,.?:;!@"\']','',line)
         line = re.sub('-',' ',line)
         line = re.sub('   ', '', line)
-        if message.text[-2:] == line[-2:]:
+        if message.text[-3:] == line[-3:]:
             need.append(line)
             break
         else:
